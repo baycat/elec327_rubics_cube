@@ -5,6 +5,11 @@
  *      Author: anyss
  */
 
+/*
+ * in:  potentiometer values
+ * out: which potentiometer, what direction
+ */
+
 #ifndef CHECKINPUT_H_
 #define CHECKINPUT_H_
 

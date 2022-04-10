@@ -5,6 +5,12 @@
  *      Author: anyss
  */
 
+/*
+ * in:  check input values
+ * out: display face
+ */
+
+
 
 /*
  * shift over leds according to last move input

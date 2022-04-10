@@ -5,6 +5,12 @@
  *      Author: anyss
  */
 
+/*
+ * in:  scramble status
+ * out: display faces for all faces
+ */
+
+
 #ifndef SCRAMBLECUBE_H_
 #define SCRAMBLECUBE_H_
 

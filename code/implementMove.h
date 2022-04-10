@@ -5,6 +5,12 @@
  *      Author: anyss
  */
 
+/*
+ * in:  check input values
+ * out: display face
+ */
+
+
 #ifndef IMPLEMENTMOVE_H_
 #define IMPLEMENTMOVE_H_
 

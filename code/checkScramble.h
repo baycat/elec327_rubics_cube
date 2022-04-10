@@ -5,8 +5,15 @@
  *      Author: anyss
  */
 
+/*
+ * in:  gyro
+ * out: mix value
+ */
+
+
 #ifndef CHECKSCRAMBLE_H_
 #define CHECKSCRAMBLE_H_
+
 
 
 

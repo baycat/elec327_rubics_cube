@@ -5,6 +5,11 @@
  *      Author: anyss
  */
 
+/*
+ * in:  scramble status
+ * out: display faces for all faces
+ */
+
 
 /*
  * Scramble cube
