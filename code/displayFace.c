@@ -5,4 +5,10 @@
  *      Author: anyss
  */
 
-
+/*
+ * take face input
+ *
+ * check that faces status
+ *
+ * turn on leds accordingly on corresponding face
+ */
