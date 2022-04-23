@@ -10425,11 +10425,10 @@ DIN A3, landscape with location and doc. field</description>
 </sheet>
 </sheets>
 <errors>
-<approved hash="106,1,40.64,205.74,P2.1,,,,,"/>
-<approved hash="113,1,18.0173,217.17,CSUPPLY,,,,,"/>
-<approved hash="113,1,149.009,162.85,PROGRAM,,,,,"/>
+<approved hash="113,1,17.9982,217.17,CSUPPLY,,,,,"/>
+<approved hash="113,1,148.978,162.819,PROGRAM,,,,,"/>
 <approved hash="113,1,113.21,220.98,R1,,,,,"/>
-<approved hash="113,1,146.643,134.91,LEDOUT,,,,,"/>
+<approved hash="113,1,146.643,134.879,LEDOUT,,,,,"/>
 <approved hash="113,1,193.571,130.071,FRAME1,,,,,"/>
 </errors>
 </schematic>

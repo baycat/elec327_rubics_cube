@@ -3470,6 +3470,7 @@ These are design rules for the Advanced Circuits barebones PCBs (4pcb.com).</des
 <wire x1="37.202" y1="35.442" x2="37.592" y2="35.052" width="0.762" layer="1"/>
 <wire x1="44.79433125" y1="27.72266875" x2="37.592" y2="34.925" width="0.762" layer="1"/>
 <wire x1="37.592" y1="35.052" x2="37.592" y2="34.925" width="0.762" layer="1"/>
+<wire x1="20.209" y1="1.81" x2="20.193" y2="1.794" width="0.254" layer="16"/>
 <wire x1="33.782" y1="1.593" x2="38.793" y2="1.593" width="0.762" layer="16"/>
 <wire x1="38.793" y1="1.593" x2="39.497" y2="0.889" width="0.762" layer="16"/>
 <wire x1="39.497" y1="0.889" x2="56.134" y2="0.889" width="0.762" layer="16"/>
@@ -3491,8 +3492,8 @@ These are design rules for the Advanced Circuits barebones PCBs (4pcb.com).</des
 <wire x1="19.209" y1="4.31" x2="19.209" y2="4.81" width="0.381" layer="16"/>
 <wire x1="18.6656625" y1="3.3664" x2="19.209" y2="3.3664" width="0.508" layer="16"/>
 <wire x1="18.2202625" y1="2.921" x2="18.6656625" y2="3.3664" width="0.508" layer="16"/>
-<wire x1="20.209" y1="1.81" x2="19.2846" y2="1.81" width="0.254" layer="16"/>
-<wire x1="19.2846" y1="1.81" x2="18.1736" y2="2.921" width="0.254" layer="16"/>
+<wire x1="19.1092625" y1="1.81" x2="18.1736" y2="2.7456625" width="0.508" layer="16"/>
+<wire x1="20.209" y1="1.81" x2="19.1092625" y2="1.81" width="0.254" layer="16"/>
 </signal>
 <signal name="TEST">
 <contactref element="MSP430" pad="17"/>
@@ -3786,7 +3787,9 @@ These are design rules for the Advanced Circuits barebones PCBs (4pcb.com).</des
 <wire x1="3.81" y1="38.608" x2="3.81" y2="36.449" width="0.1524" layer="16"/>
 <wire x1="3.81" y1="36.449" x2="5.715" y2="34.544" width="0.1524" layer="16"/>
 <via x="5.715" y="34.544" extent="1-16" drill="0.508"/>
-<wire x1="5.969" y1="34.29" x2="5.715" y2="34.544" width="0.1524" layer="1"/>
+<wire x1="5.715" y1="34.544" x2="5.969" y2="34.29" width="0.1524" layer="1"/>
+<wire x1="5.969" y1="34.29" x2="5.969" y2="29.464" width="0.1524" layer="1"/>
+<wire x1="5.969" y1="29.464" x2="5.969" y2="29.337" width="0.1524" layer="1"/>
 <wire x1="20.447" y1="62.23" x2="20.447" y2="62.103" width="0.1524" layer="16"/>
 <wire x1="21.59" y1="60.96" x2="20.447" y2="62.103" width="0.1524" layer="16"/>
 <wire x1="20.447" y1="62.23" x2="20.574" y2="61.99414375" width="0.1524" layer="16"/>
@@ -3794,8 +3797,8 @@ These are design rules for the Advanced Circuits barebones PCBs (4pcb.com).</des
 <wire x1="20.574" y1="66.675" x2="20.488" y2="66.761" width="0.1524" layer="16"/>
 <wire x1="20.488" y1="66.761" x2="16.9119" y2="66.761" width="0.1524" layer="16"/>
 <contactref element="POTS" pad="4"/>
-<wire x1="4.064" y1="24.765" x2="5.969" y2="26.67" width="0.254" layer="1"/>
-<wire x1="5.969" y1="26.67" x2="5.969" y2="34.29" width="0.254" layer="1"/>
+<wire x1="5.969" y1="29.464" x2="5.969" y2="26.67" width="0.254" layer="1"/>
+<wire x1="5.969" y1="26.67" x2="4.064" y2="24.765" width="0.254" layer="1"/>
 </signal>
 <signal name="POT5">
 <contactref element="MSP430" pad="14"/>
@@ -3898,9 +3901,6 @@ These are design rules for the Advanced Circuits barebones PCBs (4pcb.com).</des
 <mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
 </mfgpreviewcolors>
-<errors>
-<approved hash="23,16,a52cc7dec72ea5dc"/>
-</errors>
 </board>
 </drawing>
 <compatibility>

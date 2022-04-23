@@ -1425,8 +1425,11 @@ DIN A3, landscape with location and doc. field</description>
 </sheet>
 </sheets>
 <errors>
+<approved hash="106,1,187.96,162.56,EMPTY,,,,,"/>
+<approved hash="113,1,146.837,162.85,LEDIN,,,,,"/>
 <approved hash="113,1,146.643,134.91,LEDOUT,,,,,"/>
 <approved hash="113,1,193.571,130.071,FRAME1,,,,,"/>
+<approved hash="113,1,184.743,162.85,POTOUT,,,,,"/>
 </errors>
 </schematic>
 </drawing>

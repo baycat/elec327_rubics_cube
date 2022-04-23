@@ -713,11 +713,13 @@ These are design rules for the Advanced Circuits barebones PCBs (4pcb.com).</des
 <wire x1="9.398" y1="9.848" x2="9.534" y2="9.984" width="0.762" layer="1"/>
 <wire x1="56.27" y1="9.984" x2="56.515" y2="9.739" width="0.762" layer="1"/>
 <wire x1="56.515" y1="9.739" x2="56.515" y2="8.636" width="0.762" layer="1"/>
-<wire x1="4.953" y1="35.941" x2="7.493" y2="33.401" width="0.762" layer="1"/>
-<wire x1="7.542" y1="33.352" x2="9.271" y2="31.623" width="0.762" layer="1"/>
-<wire x1="4.953" y1="35.941" x2="4.064" y2="35.941" width="0.762" layer="1"/>
-<via x="9.271" y="31.623" extent="1-16" drill="0.508"/>
-<wire x1="2.6388" y1="37.3662" x2="4.064" y2="35.941" width="0.762" layer="1"/>
+<wire x1="9.271" y1="33.089" x2="9.534" y2="33.352" width="0.762" layer="1"/>
+<wire x1="3.048" y1="36.957" x2="5.842" y2="36.957" width="0.762" layer="1"/>
+<via x="5.842" y="36.957" extent="1-16" drill="0.508"/>
+<wire x1="9.271" y1="33.528" x2="5.842" y2="36.957" width="0.762" layer="16"/>
+<wire x1="2.6388" y1="37.3662" x2="3.048" y2="36.957" width="0.762" layer="1"/>
+<wire x1="35.052" y1="56.896" x2="34.876" y2="56.72" width="0.762" layer="1"/>
+<wire x1="34.876" y1="56.72" x2="32.902" y2="56.72" width="0.762" layer="1"/>
 <wire x1="32.902" y1="56.72" x2="32.902" y2="54.746" width="0.762" layer="1"/>
 <wire x1="32.3772" y1="54.2212" x2="32.902" y2="54.746" width="0.762" layer="1"/>
 <wire x1="32.902" y1="54.746" x2="33.265" y2="54.746" width="0.762" layer="1"/>
@@ -735,10 +737,9 @@ These are design rules for the Advanced Circuits barebones PCBs (4pcb.com).</des
 <wire x1="9.271" y1="26.924" x2="7.874" y2="26.924" width="0.8128" layer="16"/>
 <wire x1="7.874" y1="26.924" x2="6.731" y2="25.781" width="0.8128" layer="16"/>
 <wire x1="6.731" y1="25.781" x2="3.429" y2="25.781" width="0.8128" layer="16"/>
-<wire x1="9.271" y1="26.924" x2="9.271" y2="31.623" width="0.8128" layer="16"/>
+<wire x1="9.271" y1="26.924" x2="9.271" y2="33.528" width="0.8128" layer="16"/>
 <wire x1="24.511" y1="54.2212" x2="25.273" y2="54.2212" width="0.8128" layer="1"/>
-<wire x1="9.534" y1="33.352" x2="7.542" y2="33.352" width="0.762" layer="1"/>
-<wire x1="7.542" y1="33.352" x2="7.493" y2="33.401" width="0.762" layer="1"/>
+<wire x1="5.842" y1="36.957" x2="9.534" y2="33.352" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VCC">
 <contactref element="LED1" pad="4"/>
@@ -821,6 +822,9 @@ These are design rules for the Advanced Circuits barebones PCBs (4pcb.com).</des
 <wire x1="15.875" y1="57.15" x2="15.875" y2="58.42" width="0.762" layer="16"/>
 <wire x1="19.431" y1="58.42" x2="15.875" y2="58.42" width="0.762" layer="16"/>
 <wire x1="20.955" y1="56.896" x2="19.431" y2="58.42" width="0.762" layer="16"/>
+<wire x1="15.875" y1="58.42" x2="12.954" y2="58.42" width="0.762" layer="16"/>
+<wire x1="12.954" y1="58.42" x2="12.954" y2="62.738" width="0.762" layer="16"/>
+<wire x1="12.954" y1="62.738" x2="13.0771" y2="62.8611" width="0.762" layer="16"/>
 <wire x1="60.648" y1="9.906" x2="60.57" y2="9.984" width="0.762" layer="1"/>
 <wire x1="65.151" y1="9.906" x2="60.648" y2="9.906" width="0.762" layer="1"/>
 <via x="58.674" y="9.906" extent="1-16" drill="0.508"/>
@@ -847,6 +851,7 @@ These are design rules for the Advanced Circuits barebones PCBs (4pcb.com).</des
 <wire x1="8.69084375" y1="63.1444" x2="11.7094" y2="63.1444" width="0.254" layer="1"/>
 <wire x1="9.534" y1="60.12" x2="9.534" y2="60.72644375" width="0.254" layer="1"/>
 <wire x1="9.534" y1="60.72644375" x2="8.2296" y2="62.03084375" width="0.254" layer="1"/>
+<wire x1="13.208" y1="64.643" x2="13.376" y2="64.811" width="0.254" layer="16"/>
 <wire x1="13.208" y1="64.643" x2="29.21" y2="64.643" width="0.1524" layer="16"/>
 <wire x1="29.21" y1="64.643" x2="32.512" y2="67.945" width="0.1524" layer="16"/>
 </signal>
