@@ -13,8 +13,12 @@ uint8_t purple[] = {0xF0,10, 10, 0};
 uint8_t white[] = {0xF0, 10, 10, 10};
 uint8_t off[] = {0xE0, 0, 0, 0};
 
+uint8_t *LED1, *LED2, *LED3, *LED4, *LED5, *LED6, *LED7, *LED8, *LED9, *LED10, *LED11, *LED12, *LED13, *LED14, *LED15, *LED16, *LED17, *LED18, *LED19, *LED20, *LED21, *LED22, *LED23, *LED24, *LED25, *LED26, *LED27;
+uint8_t *LED1copy, *LED2copy, *LED3copy, *LED4copy, *LED5copy, *LED6copy, *LED7copy, *LED8copy, *LED9copy, *LED10copy, *LED11copy, *LED12copy, *LED13copy, *LED14copy, *LED15copy, *LED16copy, *LED17copy, *LED18copy;
+
+
 void init_wdt(void){
-    
+
     BCSCTL3 |= LFXT1S_2;     // ACLK = VLO
     WDTCTL = WDT_ADLY_16;    // WDT 16ms (~43.3ms since clk 12khz), ACLK, interval timer
     IE1 |= WDTIE;            // Enable WDT interrupt
@@ -28,16 +32,15 @@ int main(void){
     P1DIR &= ~BIT0;
     BCSCTL3 |= LFXT1S_2;
     init_wdt();
-    
+
     rgb_init_spi();
-    
+
     TA0CTL = TASSEL_1 + MC_1;     // ACLK, upmode
     TA0CCR0 = 20;              // Interrupt should happen every ~12 kHz / 12000
     TA0CCTL0 = CCIE;              // CCR0 interrupt enabled
 
     _enable_interrupts();
 
-    uint8_t *LED1, *LED2, *LED3, *LED4, *LED5, *LED6, *LED7, *LED8, *LED9, *LED10, *LED11, *LED12, *LED13, *LED14, *LED15, *LED16, *LED17, *LED18;
     LED1 = yellow;
     LED2 = yellow;
     LED3 = yellow;
@@ -57,21 +60,69 @@ int main(void){
     LED17 = blue;
     LED18 = red;
     rgb_set_LEDs(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18);
+    int wait = 0;
     while (1){
 
 
         ADC10CTL0 |= ENC + ADC10SC; // Sampling and conversion start
         __bis_SR_register(CPUOFF + GIE); // LPM0, ADC10_ISR will force exit
-        if ((ADC10MEM < 0x002A)){
+        if ((ADC10MEM > 0x039F) && (wait ==0)){ //counterclockwise
 
-            rgb_set_LEDs(LED7, LED4, LED1, LED8, LED5, LED2, LED9, LED6, LED3, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18);//F clockwise
+            LED1copy = LED1;
+             LED2copy = LED2;
+             LED3copy = LED3;
+             LED4copy = LED4;
+             LED6copy = LED6;
+             LED7copy = LED7;
+             LED8copy = LED8;
+             LED9copy = LED9;
+
+             //rgb_set_LEDs(LED7, LED4, LED1, LED8, LED5, LED2, LED9, LED6, LED3, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18);//F clockwise
+
+             LED1 = LED7copy;
+             LED2 = LED4copy;
+             LED3 = LED1copy;
+             LED4 = LED8copy;
+             LED6 = LED2copy;
+             LED7 = LED9copy;
+             LED8 = LED6copy;
+             LED9 = LED3copy;
+             rgb_set_LEDs(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18);
+
+            wait = 1;
+            //rgb_set_LEDs(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18);
 
         }
-        else if (ADC10MEM > 0x039F){
-            rgb_set_LEDs(LED3, LED6, LED9, LED2, LED5, LED8, LED1, LED4, LED7, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18);
+        else if ((ADC10MEM < 0x002A) && (wait == 0)){//clockwise
+            //counterclockwisefaceturn(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18);
+            LED1copy = LED1;
+                LED2copy = LED2;
+                LED3copy = LED3;
+                LED4copy = LED4;
+                LED6copy = LED6;
+                LED7copy = LED7;
+                LED8copy = LED8;
+                LED9copy = LED9;
+
+                //rgb_set_LEDs(LED3, LED6, LED9, LED2, LED5, LED8, LED1, LED4, LED7, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18);
+
+                LED1 = LED3copy;
+                LED2 = LED6copy;
+                LED3 = LED9copy;
+                LED4 = LED2copy;
+                LED6 = LED8copy;
+                LED7 = LED1copy;
+                LED8 = LED4copy;
+                LED9 = LED7copy;
+                rgb_set_LEDs(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18);
+            wait = 1;
+            //rgb_set_LEDs(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18);
 
         }
-        else
+        else if ( (ADC10MEM > 0x00F6) && (ADC10MEM < 0x02BF)){
+            wait = 0;
+        }
+
 
         __bic_SR_register(LPM3_bits + GIE);
     }
