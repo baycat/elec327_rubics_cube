@@ -1,0 +1,15 @@
+"Qty";"Value";"Device";"Package";"Parts";"Description";"DESCRIPTION";"HEIGHT";"MANUFACTURER_NAME";"MANUFACTURER_PART_NUMBER";"MOUSER_PART_NUMBER";"MOUSER_PRICE-STOCK";"POPULARITY";"PROD_ID";"SPICEPREFIX";
+"1";"";"C-USC1206";"C1206";"CSUPPLY";"CAPACITOR, American symbol";"";"";"";"";"";"";"24";"";"C";
+"2";"";"M04LOCK";"1X04_LOCK";"LEDOUT, PROGRAM";"Header 4";"";"";"";"";"";"";"";"";"";
+"1";"";"R-US_R1206";"R1206";"R1";"RESISTOR, American symbol";"";"";"";"";"";"";"";"";"";
+"9";"APA102";"APA102";"5050";"LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9";"APA102 SPI RGB LED";"";"";"";"";"";"";"";"";"";
+"2";"CL21A106KOCLRNC";"CL21A106KOCLRNC";"CAPC2012X95N";"C1, C2";"Cap Ceramic 10uF 16V X5R 10% Pad SMD 0805 85C T/R";"Cap Ceramic 10uF 16V X5R 10% Pad SMD 0805 85C T/R";"0.95mm";"Samsung Electro-Mechanics";"CL21A106KOCLRNC";"187-CL21A106KOCLRNC";"https://www.mouser.co.uk/ProductDetail/Samsung-Electro-Mechanics/CL21A106KOCLRNC?qs=yOVawPpwOwk0TtWGO3Tj1g%3D%3D";"";"";"";
+"2";"CL21A226MOQNNNE";"CL21A226MOQNNNE";"CAPC2012X140N";"C3, C4";"Cap Ceramic 22uF 16V X5R 20% Pad SMD 0805 85C T/R";"Cap Ceramic 22uF 16V X5R 20% Pad SMD 0805 85C T/R";"1.4mm";"Samsung Electro-Mechanics";"CL21A226MOQNNNE";"187-CL21A226MOQNNNE";"https://www.mouser.co.uk/ProductDetail/Samsung-Electro-Mechanics/CL21A226MOQNNNE?qs=xZ%2FP%252Ba9zWqZNj78soW9a4Q%3D%3D";"";"";"";
+"1";"DFE252012PD-1R0M=P2";"DFE252012PD-1R0M=P2";"DFE2HCAH1R0MJ0L";"L1";"DFE252012P_D Series Inductor 1.0uH +/-20% 1008 (2520)";"DFE252012P_D Series Inductor 1.0uH +/-20% 1008 (2520)";"1.2mm";"Murata Electronics";"DFE252012PD-1R0M=P2";"81-DFE252012PD1R0MP2";"https://www.mouser.co.uk/ProductDetail/Murata-Electronics/DFE252012PD-1R0M%3dP2?qs=AQlKX63v8RvGsSiwzbLNIA%3D%3D";"";"";"";
+"1";"G1040003D_LRA";"G1040003D_LRA";"COIN_VIBRATION_MOTOR";"HAPTIC";"G1040003D Coin Vibration Motor - Jinlong Machinery and Electronics Inc.";"";"";"";"";"";"";"";"COMP-15536";"";
+"1";"ISL91110IRNZ-T7A";"ISL91110IRNZ-T7A";"QFN50P400X400X100-21N";"LED10";"Integrated FET Regulators High Current Buck Boost Switching Regulator Delivering 2A of Continuous Output Current";"Integrated FET Regulators High Current Buck Boost Switching Regulator Delivering 2A of Continuous Output Current";"1mm";"Renesas Electronics";"ISL91110IRNZ-T7A";"968-ISL91110IRNZ-T7A";"https://www.mouser.co.uk/ProductDetail/Renesas-Intersil/ISL91110IRNZ-T7A?qs=vyIerDHf%2Fmmihws9YL5pdg%3D%3D";"";"";"";
+"1";"M02";"M02";"2PINHEADER";"BATT";"";"";"";"";"";"";"";"";"";"";
+"1";"M06";"M06";"6PINHEADER";"POTS";"";"";"";"";"";"";"";"";"";"";
+"1";"MSP430G2XX3TSSOP";"MSP430G2XX3TSSOP";"PW20";"MSP430";"MSP430G2XX3";"";"";"";"";"";"";"";"";"";
+"1";"POT";"POT";"POT";"P1";"";"";"";"";"";"";"";"";"";"";
+"1";"SWITCH_DPDT";"SWITCH_DPDT";"JS_DPDT_TH";"SWITCH";"";"";"";"";"";"";"";"";"";"";
