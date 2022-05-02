@@ -83,6 +83,7 @@ int m_rand(void) {
  */
 
 void scramble() {
+    srand();
     for (i = 0; i < 20; i++) {
         face = f_rand();
         move = m_rand();
