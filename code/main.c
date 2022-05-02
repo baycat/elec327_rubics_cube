@@ -70,13 +70,13 @@ int main(void){
     LED16 = orange;
     LED17 = orange;
     LED18 = orange;
-    LED19 = white;
+    LED19 = green;
     LED20 = white;
     LED21 = white;
-    LED22 = white;
+    LED22 = green;
     LED23 = white; //left
     LED24 = white;
-    LED25 = white;
+    LED25 = green;
     LED26 = white;
     LED27 = white;
     LED28 = yellow;
@@ -106,21 +106,22 @@ int main(void){
     LED52 = blue;
     LED53 = blue;
     LED54 = blue;
-
+    // note: base of each board faces touches main face board, back board same orientation as face board
     rgb_set_LEDs(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9,
                  LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18,
                  LED19, LED20, LED21, LED22, LED23, LED24, LED25, LED26, LED27,
                  LED28, LED29, LED30, LED31, LED32, LED33, LED34, LED35, LED36,
                  LED37, LED38, LED39, LED40, LED41, LED42, LED43, LED44, LED45,
                  LED46, LED47, LED48, LED49, LED50, LED51, LED52, LED53, LED54);
-    int wait = 0;
+    int wait0 = 1;
+    int wait1 = 1;
     while (1){
 
         //ADC10CTL0 &= ~ENC;
         //while (ADC10CTL1 & BUSY);
         ADC10CTL0 |= ENC + ADC10SC; // Sampling and conversion start
         __bis_SR_register(CPUOFF + GIE); // LPM0, ADC10_ISR will force exit
-        if ((ADC10MEM > 0x039F) && (wait ==0) && (ADC10CTL1 == INCH_0)){ //counterclockwise face turn
+        if ((ADC10MEM > 0x039F) && (wait0 == 0) && (ADC10CTL1 == INCH_0)){ //counterclockwise face turn
 
             //front
              LED1copy = LED1;
@@ -181,11 +182,11 @@ int main(void){
                                           LED37, LED38, LED39, LED40, LED41, LED42, LED43, LED44, LED45,
                                           LED46, LED47, LED48, LED49, LED50, LED51, LED52, LED53, LED54);
 
-            wait = 1;
+            wait0 = 1;
             //rgb_set_LEDs(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18);
 
         }
-        else if ((ADC10MEM < 0x002A) && (wait == 0) && (ADC10CTL1 == INCH_0)){ //clockwise face turn
+        else if ((ADC10MEM < 0x002A) && (wait0 == 0) && (ADC10CTL1 == INCH_0)){ //clockwise face turn
                 LED1copy = LED1;
                 LED2copy = LED2;
                 LED3copy = LED3;
@@ -245,15 +246,86 @@ int main(void){
                              LED28, LED29, LED30, LED31, LED32, LED33, LED34, LED35, LED36,
                              LED37, LED38, LED39, LED40, LED41, LED42, LED43, LED44, LED45,
                              LED46, LED47, LED48, LED49, LED50, LED51, LED52, LED53, LED54);
-            wait = 1;
+            wait0 = 1;
             //rgb_set_LEDs(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18);
 
         }
         else if ( (ADC10MEM > 0x00F6) && (ADC10MEM < 0x02BF) && (ADC10CTL1 == INCH_0)){
-            wait = 0;
+            wait0 = 0;
         }
-        else if ((ADC10MEM > 0x039F) && (wait == 0) && (ADC10CTL1 == INCH_1)){ //counterclockwise top turn
-            
+        else if ((ADC10MEM > 0x039F) && (wait1 == 0) && (ADC10CTL1 == INCH_1)){ //counterclockwise top turn
+            //top
+            LED10copy = LED10;
+            LED11copy = LED11;
+            LED12copy = LED12;
+            LED13copy = LED13;
+            LED15copy = LED15;
+            LED16copy = LED16;
+            LED17copy = LED17;
+            LED18copy = LED18;
+            //face
+            LED7copy = LED7;
+            LED8copy = LED8;
+            LED9copy = LED9;
+            //left
+            LED19copy = LED19;
+            LED22copy = LED22;
+            LED25copy = LED25;
+            //right
+            LED30copy = LED30;
+            LED33copy = LED33;
+            LED36copy = LED36;
+            //back
+            LED52copy = LED52;
+            LED53copy = LED53;
+            LED54copy = LED54;
+
+            //top shift
+            LED10 = LED12copy;
+            LED11 = LED15copy;
+            LED12 = LED18copy;
+            LED13 = LED11copy;
+            LED15 = LED17copy;
+            LED16 = LED10copy;
+            LED17 = LED13copy;
+            LED18 = LED16copy;
+            //right top 3 become front top 3
+            LED30 = LED9copy;
+            LED33 = LED8copy;
+            LED36 = LED7copy;
+            //front top 3 become left top 3
+            LED7 = LED19copy;
+            LED8 = LED22copy;
+            LED9 = LED25copy;
+            //left top 3 become back top 3
+            LED19 = LED52copy;
+            LED22 = LED53copy;
+            LED25 = LED54copy;
+            //back top 3 become right top 3
+            LED52 = LED36copy;
+            LED53 = LED33copy;
+            LED54 = LED30copy;
+
+            rgb_set_LEDs(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9,
+                         LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18,
+                         LED19, LED20, LED21, LED22, LED23, LED24, LED25, LED26, LED27,
+                         LED28, LED29, LED30, LED31, LED32, LED33, LED34, LED35, LED36,
+                         LED37, LED38, LED39, LED40, LED41, LED42, LED43, LED44, LED45,
+                         LED46, LED47, LED48, LED49, LED50, LED51, LED52, LED53, LED54);
+            wait1 = 1;
+        }
+        else if ((ADC10MEM < 0x002A) && (wait0 == 0) && (ADC10CTL1 == INCH_1)){
+
+            rgb_set_LEDs(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9,
+                         LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18,
+                         LED19, LED20, LED21, LED22, LED23, LED24, LED25, LED26, LED27,
+                         LED28, LED29, LED30, LED31, LED32, LED33, LED34, LED35, LED36,
+                         LED37, LED38, LED39, LED40, LED41, LED42, LED43, LED44, LED45,
+                         LED46, LED47, LED48, LED49, LED50, LED51, LED52, LED53, LED54);
+            wait1 = 1;
+        }
+        else if ( (ADC10MEM > 0x00F6) && (ADC10MEM < 0x02BF) && (ADC10CTL1 == INCH_1)){
+            wait1 = 0;
         }
         else{
 
