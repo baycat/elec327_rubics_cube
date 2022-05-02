@@ -82,6 +82,7 @@ int m_rand(void) {
  * display face
  */
 
+void scramble() {
     for (i = 0; i < 20; i++) {
         face = f_rand();
         move = m_rand();
@@ -89,3 +90,4 @@ int m_rand(void) {
         implement_move(face, move);
 
     }
+}
