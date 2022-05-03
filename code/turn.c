@@ -138,7 +138,7 @@ void turn(void) {
                                 LED37, LED38, LED39, LED40, LED41, LED42, LED43, LED44, LED45,
                                 LED46, LED47, LED48, LED49, LED50, LED51, LED52, LED53, LED54);
                 wait0 = 1;
-                //rgb_set_LEDs(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18);
+                
 
             }
             else if ( (ADC10MEM > 0x00F6) && (ADC10MEM < 0x02BF) && (ADC10CTL1 == INCH_0)){
@@ -218,6 +218,146 @@ void turn(void) {
             else if ( (ADC10MEM > 0x00F6) && (ADC10MEM < 0x02BF) && (ADC10CTL1 == INCH_1)){
                 wait1 = 0;
             }
+             else if ((ADC10MEM > 0x039F) && (wait3 == 0) && (ADC10CTL1 == INCH_3)){ //counterclockwise left turn
+            LED19copy = LED19;
+            LED20copy = LED20;
+            LED21copy = LED21;
+            LED22copy = LED22;
+            LED24copy = LED24;
+            LED25copy = LED25;
+            LED26copy = LED26;
+            LED27copy = LED27;
+            
+            //front
+            LED3copy = LED3;
+            LED6copy = LED6;
+            LED9copy = LED9;
+            
+            //top
+            LED12copy = LED12;
+            LED15copy = LED15;
+            LED18copy = LED18;
+            
+            //base
+            LED37copy = LED37;
+            LED40copy = LED40;
+            LED43copy = LED43;
+            
+            //back
+            LED46copy = LED46;
+            LED49copy = LED49;
+            LED52copy = LED52;
+            
+            //left shift
+            LED19 = LED21copy;
+            LED20 = LED24copy;
+            LED21 = LED27copy;
+            LED22 = LED20copy;
+            LED24 = LED26copy;
+            LED25 = LED19copy;
+            LED26 = LED22copy;
+            LED27 = LED25copy;
+            
+            //top becomes front
+            LED12 = LED3copy;
+            LED15 = LED6copy;
+            LED18 = LED3copy;
+            
+            //back becomes top
+            LED46 = LED18copy;
+            LED49 = LED15copy;
+            LED52 = LED12copy;
+            
+            //base becomes back
+            LED37 = LED46copy;
+            LED40 = LED49copy;
+            LED43 = LED52copy;
+            
+            //front becomes base
+            LED3 = LED43copy;
+            LED6 = LED40copy;
+            LED9 = LED37copy;
+            
+            rgb_set_LEDs(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9,
+                         LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18,
+                         LED19, LED20, LED21, LED22, LED23, LED24, LED25, LED26, LED27,
+                         LED28, LED29, LED30, LED31, LED32, LED33, LED34, LED35, LED36,
+                         LED37, LED38, LED39, LED40, LED41, LED42, LED43, LED44, LED45,
+                         LED46, LED47, LED48, LED49, LED50, LED51, LED52, LED53, LED54);
+            wait3 = 1;
+        }
+        else if ((ADC10MEM < 0x002A) && (wait0 == 0) && (ADC10CTL1 == INCH_1)){ //clockwise left turn
+            LED19copy = LED19;
+            LED20copy = LED20;
+            LED21copy = LED21;
+            LED22copy = LED22;
+            LED24copy = LED24;
+            LED25copy = LED25;
+            LED26copy = LED26;
+            LED27copy = LED27;
+            
+            //front
+            LED3copy = LED3;
+            LED6copy = LED6;
+            LED9copy = LED9;
+            
+            //top
+            LED12copy = LED12;
+            LED15copy = LED15;
+            LED18copy = LED18;
+            
+            //base
+            LED37copy = LED37;
+            LED40copy = LED40;
+            LED43copy = LED43;
+            
+            //back
+            LED46copy = LED46;
+            LED49copy = LED49;
+            LED52copy = LED52;
+            
+            //left shift
+            LED19 = LED25copy;
+            LED20 = LED22copy;
+            LED21 = LED19copy;
+            LED22 = LED26copy;
+            LED24 = LED20copy;
+            LED25 = LED27copy;
+            LED26 = LED24copy;
+            LED27 = LED21copy;
+            
+            //top becomes back
+            LED12 = LED52copy;
+            LED15 = LED49copy;
+            LED18 = LED46copy;
+            
+            //back becomes base
+            LED46 = LED37copy;
+            LED49 = LED40copy;
+            LED52 = LED43copy;
+            
+            //base becomes front
+            LED37 = LED9copy;
+            LED40 = LED6copy;
+            LED43 = LED3copy;
+            
+            //front becomes top
+            LED3 = LED12copy;
+            LED6 = LED15copy;
+            LED9 = LED18copy;
+            
+            rgb_set_LEDs(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9,
+                         LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18,
+                         LED19, LED20, LED21, LED22, LED23, LED24, LED25, LED26, LED27,
+                         LED28, LED29, LED30, LED31, LED32, LED33, LED34, LED35, LED36,
+                         LED37, LED38, LED39, LED40, LED41, LED42, LED43, LED44, LED45,
+                         LED46, LED47, LED48, LED49, LED50, LED51, LED52, LED53, LED54);
+            wait3 = 1;
+            
+        }
+        else if ( (ADC10MEM > 0x00F6) && (ADC10MEM < 0x02BF) && (ADC10CTL1 == INCH_3)){
+            wait3 = 0;
+        }
             else{
 
             }
