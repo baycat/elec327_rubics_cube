@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "LEDinterface.h"
+#include "turn.h"
 #include "rotationLogic.h"
 
 uint8_t red[] = {0xF0, 10, 0, 0};
