@@ -11,7 +11,7 @@
  */
 #include <msp430.h> 
 
-void turn() {
+void turn(void) {
     if ((ADC10MEM > 0x039F) && (wait0 == 0) && (ADC10CTL1 == INCH_0)){ //counterclockwise face turn
 
                 //front
@@ -243,8 +243,6 @@ void turn() {
                 break;
 
             }
-            __bic_SR_register(LPM3_bits + GIE);
-        }
 
 }
 /*
