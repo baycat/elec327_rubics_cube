@@ -482,6 +482,131 @@ void turn(void) {
         else if ( (ADC10MEM > 0x00F6) && (ADC10MEM < 0x02BF) && (ADC10CTL1 == INCH_5)){
             wait5 = 0;
         }
+            else if ((ADC10MEM > 0x039F) && (wait6 == 0) && (ADC10CTL1 == INCH_6)){ //counterclockwise base turn
+            LED37copy = LED37;
+            LED38copy = LED38;
+            LED39copy = LED39;
+            LED40copy = LED40;
+            LED42copy = LED42;
+            LED43copy = LED43;
+            LED44copy = LED44;
+            LED45copy = LED45;
+            
+            //front
+            LED1copy = LED1;
+            LED2copy = LED2;
+            LED3copy = LED3;
+            
+            //right
+            LED28copy = LED28;
+            LED31copy = LED31;
+            LED34copy = LED34;
+            
+            //left
+            LED21copy = LED21;
+            LED24copy = LED24;
+            LED27copy = LED27;
+            
+            //back
+            LED46copy = LED46;
+            LED47copy = LED47;
+            LED48copy = LED48;
+            
+            //base shift
+            LED37 = LED39copy;
+            LED38 = LED42copy;
+            LED39 = LED45copy;
+            LED40 = LED38copy;
+            LED42 = LED44copy;
+            LED43 = LED37copy;
+            LED44 = LED40copy;
+            LED45 = LED43copy;
+            
+            //front becomes right
+            LED1 = LED34copy;
+            LED2 = LED31copy;
+            LED3 = LED28copy;
+            
+            //right becomes back
+            LED28 = LED48copy;
+            LED31 = LED47copy;
+            LED34 = LED46copy;
+            
+            //back becomes left
+            LED48 = LED27copy;
+            LED47 = LED24copy;
+            LED46 = LED21copy;
+            
+            //left becomes front
+            LED21 = LED1copy;
+            LED24 = LED2copy;
+            LED27 = LED3copy;
+                    
+        }
+        else if ((ADC10MEM < 0x002A) && (wait6 == 0) && (ADC10CTL1 == INCH_6)){ //clockwise base turn
+            LED37copy = LED37;
+            LED38copy = LED38;
+            LED39copy = LED39;
+            LED40copy = LED40;
+            LED42copy = LED42;
+            LED43copy = LED43;
+            LED44copy = LED44;
+            LED45copy = LED45;
+            
+            //front
+            LED1copy = LED1;
+            LED2copy = LED2;
+            LED3copy = LED3;
+            
+            //right
+            LED28copy = LED28;
+            LED31copy = LED31;
+            LED34copy = LED34;
+            
+            //left
+            LED21copy = LED21;
+            LED24copy = LED24;
+            LED27copy = LED27;
+            
+            //back
+            LED46copy = LED46;
+            LED47copy = LED47;
+            LED48copy = LED48;
+            
+            //base shift
+            LED37 = LED43copy;
+            LED38 = LED40copy;
+            LED39 = LED37copy;
+            LED40 = LED44copy;
+            LED42 = LED38copy;
+            LED43 = LED45copy;
+            LED44 = LED42copy;
+            LED45 = LED39copy;
+            
+            //front becomes left
+            LED1 = LED21copy;
+            LED2 = LED24copy;
+            LED3 = LED27copy;
+            
+            //right becomes front
+            LED28 = LED3copy;
+            LED31 = LED2copy;
+            LED34 = LED1copy;
+            
+            //back becomes right
+            LED48 = LED28copy;
+            LED47 = LED31copy;
+            LED46 = LED34copy;
+            
+            //left becomes back
+            LED21 = LED46copy;
+            LED24 = LED47copy;
+            LED27 = LED48copy;
+            
+        }
+        else if ( (ADC10MEM > 0x00F6) && (ADC10MEM < 0x02BF) && (ADC10CTL1 == INCH_6)){
+            wait6 = 0;
+        }
             else{
 
             }
