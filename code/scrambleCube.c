@@ -62,8 +62,8 @@ int m_rand(void) {
             random_value = (random_value << 1) + bit;
         }
         seed_var = lfsr;
-        //for our 6 faces
-    } while (random_value > 5);
+        //for cw and ccw
+    } while (random_value > 1);
     random_value++;
 
     return random_value;
