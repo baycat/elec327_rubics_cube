@@ -88,7 +88,7 @@ void scramble() {
         face = f_rand();
         move = m_rand();
 
-        if ((move == 1) && (face == 0)){ //counterclockwise face turn
+        if ((move == 0) && (face == 0)){ //counterclockwise face turn
 
             //front
              LED1copy = LED1;
@@ -153,7 +153,7 @@ void scramble() {
             //rgb_set_LEDs(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18);
 
         }
-        else if ((move == 0) && (face == 0)){ //clockwise face turn
+        else if ((move == 1) && (face == 0)){ //clockwise face turn
                 LED1copy = LED1;
                 LED2copy = LED2;
                 LED3copy = LED3;
@@ -217,10 +217,7 @@ void scramble() {
             //rgb_set_LEDs(LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8, LED9, LED10, LED11, LED12, LED13, LED14, LED15, LED16, LED17, LED18);
 
         }
-        else if ( (move == 1) && (face = 1)){
-            wait0 = 0;
-        }
-        else if ((move == 0) && (face == 1)){ //counterclockwise top turn
+        else if ((move == 1) && (face == 1)){ //counterclockwise top turn
             //top
             LED10copy = LED10;
             LED11copy = LED11;
@@ -342,9 +339,6 @@ void scramble() {
                          LED37, LED38, LED39, LED40, LED41, LED42, LED43, LED44, LED45,
                          LED46, LED47, LED48, LED49, LED50, LED51, LED52, LED53, LED54);
             wait1 = 1;
-        }
-        else if ((move == 1) && (face == 2)){
-            wait1 = 0;
         }
         else if ((move == 0) && (face == 3)){ //counterclockwise left turn
             LED19copy = LED19;
